@@ -5,6 +5,13 @@ Ave aveFromJson(String str) => Ave.fromJson(json.decode(str));
 String aveToJson(Ave data) => json.encode(data.toJson());
 
 class Ave {
+  final _url = "https://www.turismo.navarra.es/imgs/rrtt/";
+
+//"https://www.turismo.navarra.es/imgs/rrtt/05/01/11/00/3824FotoTH1.jpg";
+  getImgUrl() {
+    return _url + this.path + this.imgFichero;
+  }
+
   Ave({
     this.numFila,
     this.codRecurso,
